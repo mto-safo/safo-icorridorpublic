@@ -1,0 +1,39 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">(IN DEVELOPMENT) Home <span class="badge">test number of items</span></a></li>
+  <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+  <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
+  <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">Settings <span class="label label-primary">test MTO Exclusive</span></a></li>
+</ul>
+
+<!-- Tab panes -->
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">Home Tab pane content
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="calcite-web">
+        <div class="card-base card-shaped">
+          <figure class="card-image-wrap">
+            <img class="card-image" src="https://esri.github.io/calcite-web/assets/img/docs/bridge-circle.png">
+          </figure>
+          <div class="card-content">
+            <p>Another class <code>card-shaped</code> allows for a stylized version of the card meant to work with geometrically-shaped images.</p><a class="btn btn-default" href="">View Examples</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <div role="tabpanel" class="tab-pane" id="profile">Profile Tab pane content</div>
+  <div role="tabpanel" class="tab-pane" id="messages">Messages Tab pane content</div>
+  <div role="tabpanel" class="tab-pane" id="settings">Settings Tab pane content</div>
+</div>
