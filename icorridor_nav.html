@@ -1,3 +1,11 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script type="module" src=https://js.arcgis.com/calcite-components/1.0.0-beta.74/calcite.esm.js></script>
+  <link rel="stylesheet" type="text/css" href=https://js.arcgis.com/calcite-components/1.0.0-beta.74/calcite.css />
+  </head> <body>
+
 <!-- Nav Tab Headers -->
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">(IN DEVELOPMENT) Home <span class="badge">test number of items</span></a></li>
@@ -12,33 +20,33 @@
 <div class="tab-content">
   
   <div role="tabpanel" class="tab-pane active" id="home">
-    <div>
-      <div class="col-xs-12 col-sm-4 col-md-3">
-        <div class="four-card">
-          
-          <calcite-card style="--calcite-ui-foreground-1:white" thumbnail-position="block-start" hydrated="">
-            <div class="card-image" slot="thumbnail">
-              <img class="card-image" alt="Placeholder" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/placeholder.png?raw=true">
-              <div class="card-icon">
+    <div class="col-xs-12 col-sm-4 col-md-3">
+      <div class="four-card">
+        <div style="--calcite-ui-foreground-1:white" hydrated="">
+          <div class="card-image" slot="thumbnail">
+            <img class="card-image" alt="Placeholder" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/placeholder.png?raw=true">
+          </div>
+          <div class="card-content">
+            <h4 slot="title">
+              <calcite-link style="text-decoration: none" href="#" rel="noopener" role="presentation" hydrated="">Card with Image</calcite-link>
+            </h4>
+            <p slot="subtitle">Cards can single buttons or button groups with inline justified buttons.</p>
+            
+            <div class="btn-group btn-group-justified" aria-label="actions" slot="footer-trailing" role="group">
+              
+              <calcite-button class="details-button" hydrated="" round="true" appearance="outline">Details</calcite-button>
+                <div class="card-icon">
                 <img src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/arcgis-dashboards.png?raw=true">
-              </div>
+                </div>
+              <calcite-button class="view-button" hydrated="" round="true" appearance="solid">View</calcite-button>
+              <div class="clearfix"></div>
             </div>
-            <div class="card-content">
-              <h4 slot="title">
-                <calcite-link href="#" rel="noopener" role="presentation" hydrated="">Card with Image</calcite-link>
-              </h4>
-              <p slot="subtitle">Cards can single buttons or button groups with inline justified buttons.</p>
-              <div aria-label="actions" slot="footer-trailing" class="btn-group btn-group-justified" role="group">
-                <calcite-button href="#" scale="l" width="half" alignment="center" appearance="solid" color="blue" type="button" hydrated="">View</calcite-button>
-                <calcite-button href="#" scale="l" width="half" alignment="center" appearance="solid" color="red" type="button" hydrated="">Details</calcite-button>
-              </div>
-            </div>
-          </calcite-card>
-          
+            
+          </div>
         </div>
+        
       </div>
     </div>
-
     
   </div>
   
@@ -47,29 +55,6 @@
   <div role="tabpanel" class="tab-pane" id="settings">Settings Tab pane content</div>
 </div>
 
-<style>
-  div.four-card {
-    margin: auto;
-    text-align: center;
-    padding: 0px;
-    border-radius: 30px;
-    border: 0.1px solid black;
-    overflow: hidden;
-    perspective: 1px;
-  }
-  div.card-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  div.card-icon {
-    width: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  div.card-icon img {
-    width: 100%;
-    height: 100%;
-  }
-</style>
+
+</body>
+</html>
