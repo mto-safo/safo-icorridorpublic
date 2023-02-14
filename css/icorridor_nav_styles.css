@@ -1,0 +1,55 @@
+.four-card {
+  margin: auto;
+  height:500px;
+  text-align: center;
+  padding: 50px;
+  border-radius: 30px;
+  overflow: hidden;
+  perspective: 1px;
+  background-color:white;
+  box-shadow: -10px -10px 15px rgba(240,240,240,5),10px 10px 15px rgba(220,220,220,5);
+}
+.card-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.view-button {
+  margin: auto;
+  text-align: center;
+  height: auto;
+  padding: 15px;
+  overflow: hidden;
+  perspective: 1px;
+  background-color:white;
+  display:inline-block;
+}
+  .card-icon {
+  width: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display:inline-block;
+}
+  .card-icon img {
+  width: 100%;
+  height: 100%;
+}
+.details-button {
+  margin: auto;
+  text-align: center;
+  height: auto;
+  padding: 15px;
+  overflow: hidden;
+  perspective: 1px;
+  background-color:white;
+  display:inline-block;
+}
+.clearfix {
+  clear:both
+}
+#bootstrap-overrides .tab-header {
+}
+#bootstrap-overrides li[tabindex="0"] a{
+background-color:blue;
+}
