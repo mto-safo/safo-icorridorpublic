@@ -1,0 +1,61 @@
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .container {
+    width: 85%;
+    padding:20px;
+  }
+  .mto-logo {
+    max-height:40px;
+    min-height:20px;
+  }
+  .agol-logo {
+    max-height:30px;
+    min-height:20px;
+  }
+  .site-logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom:30px;
+  }
+  .site-logo-icorridor {
+    max-height:55px;
+    min-height:30px;
+  }
+  .header-title {
+    margin-top:50px;
+    text-align: center;
+    position: relative;
+    font-size:50px;
+  }
+  
+  .header-link {
+    margin-left: 15px;
+  }
+  .first-tier {
+      height: auto;
+      margin-bottom: 0px;
+      background-color: #1a1a1a;
+    }
+  #nav-dropdown-menu {
+    color:black;
+  }
+  .site-header-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .data-logo {
+    height:1.5em;
+    margin:0;
+  }
+  .header-link:hover .dropdown-menu {
+    display: block;
+    
+  }
+  
