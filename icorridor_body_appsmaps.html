@@ -1,0 +1,82 @@
+<div id="bootstrap-overrides">
+    <!--Row container-->
+    <div id="featured-container" class="featured-container">
+      <div class="featured-title">
+        <h1><b>Apps</b>&Maps</h1>
+      </div>
+    
+      <!--Box containing Dropdown Menu-->
+      <div class="dropdown-container">
+        <!--Clicking Area for Dropdown Menu-->
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+          <div class="dropdown-click">
+            
+            <span class="dropdown-text">Recently Added <span class="caret"></span></span> 
+             
+          </div>
+        </a>
+        
+        <ul id="dropdown-select" class="dropdown-menu">
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation#featured-container">Road Transportation</a></li>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">Alternative Transportation</a></li>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">System Performance</a></li>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">Demographics & Landuse</a></li>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">External Applications</a></li>
+          <li class="divider" role="separator"></li>
+          <p class="featured-container"><b>MTO Internal</b></p>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> Transportation Forecasting</a></li>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> ChargeON</a></li>
+          <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> Internal Applications</a></li>
+        </ul>
+        
+      </div>
+      
+      
+      
+      <div>
+        <h1><b> </b></h1>
+      </div>
+      
+    </div>
+  </div>
+  
+  <style>
+    #bootstrap-overrides .caret {
+      font-size:40px;
+    }
+    .featured-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .featured-title {
+      position: absolute;
+      left:0;
+    }
+    .dropdown-container {
+      height:90px;
+      width:35%;
+    }
+    .dropdown-click {
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      height:100%;
+      border-radius:150px;
+      background-color:white;
+      box-shadow: -10px -10px 15px rgba(240,240,240,5),10px 10px 15px rgba(190,190,190,5);
+    }
+    .dropdown-text {
+      font-size:200%;
+      vertical-align:middle;
+    }
+    .text-icon {
+      height: 1em;
+    }
+    #dropdown-select {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%,-22%);
+    }
+  </style>
