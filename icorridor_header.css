@@ -36,6 +36,7 @@
 
 .header-link {
   margin-left: 15px;
+  font-size:100%;
 }
 .first-tier {
     height: auto;
@@ -75,4 +76,8 @@
     clear: both;
     display: none;
   }
+  .header-link {
+  margin-left: 15px;
+  font-size:80%;
+}
 }
