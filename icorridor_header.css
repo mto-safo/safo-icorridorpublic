@@ -60,12 +60,17 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header-link.dropdown {
+  #site-logo-icorridor {
     visibility: hidden;
     clear: both;
     display: none;
   }
-  #header-agol {
+  #site-logo-mto {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+  #site-logo-agol {
     visibility: hidden;
     clear: both;
     display: none;
