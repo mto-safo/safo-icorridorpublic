@@ -1,4 +1,133 @@
-<h1><b>Welcome!</b></h1>
-<p class="mtostyle" style="margin-bottom: 1.25rem; padding: 0px; text-rendering: optimizelegibility; line-height: 1.6; max-width: 90rem;">
+<div id="intro">
+  <h1><b>Welcome!</b></h1>
+  <p class="mtostyle" style="margin-bottom: 1.25rem; padding: 0px; text-rendering: optimizelegibility; line-height: 1.6; max-width: 90rem;"></p>
+  
+  <div id="intro-row" class="row">
+    <div class="intro-col-9">
+       <p style="font-size: 20px;">Here on iCorridor you will find a wide range of information products that support MTO's transportation and land use planning decisions. This includes but is not limited to: detailed population &amp; employment information; proximity of roads &amp; rapid transit to high-density area travel behavior information; mode shares, highway traffic, and commercial vehicle characteristics; information on road &amp; highway travel times and performance characteristics.</p>
+      
+    </div>
+    <div id="desktop-intro-num" class="intro-col-3">
+      <div class="intro-num">
+        <p style="text-align: center; margin:0px;padding:0px;transform: translate(0,100%)"><b>Explore MTO's</b></p>
+        <img class="trillium" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/trillium_blue.png?raw=true">
+        <h1 style="text-align: center; font-size:80px"><b>250</b></h1>
+        <p style="text-align: center;"><b>Data Assets</b></p>
+          
+        <div>
+          <a id="view-all" href="https://icorridor-mto-on-ca.hub.arcgis.com/search" class="btn btn-primary btn-lg active vertical-center" role="button"><b>View All</b>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+  <div id="mobile-intro-num" class="intro-col-3">
+    <div class="intro-num">
+      <p style="text-align: center; margin:0px;padding:0px;transform: translate(0,100%)"><b>Explore MTO's</b></p>
+      <img class="trillium" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/trillium_blue.png?raw=true">
+      <h1 style="text-align: center; font-size:80px"><b>250</b></h1>
+      <p style="text-align: center;"><b>Data Assets</b></p>
+        
+      <div>
+        <a id="view-all" href="https://icorridor-mto-on-ca.hub.arcgis.com/search" class="btn btn-primary btn-lg active vertical-center" role="button"><b>View All</b></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    </p><p style="font-size: 20px;">Here on iCorridor you will find a wide range of information products that support MTO's transportation and land use planning decisions. This includes but is not limited to: detailed population &amp; employment information; proximity of roads &amp; rapid transit to high-density area travel behavior information; mode shares, highway traffic, and commercial vehicle characteristics; information on road &amp; highway travel times and performance characteristics.</p>
+<style>
+.intro-col-1 {width: 8.33%;}
+.intro-col-2 {width: 16.66%;}
+.intro-col-3 {width: 25%;}
+.intro-col-4 {width: 33.33%;}
+.intro-col-5 {width: 41.66%;}
+.intro-col-6 {width: 50%;}
+.intro-col-7 {width: 58.33%;}
+.intro-col-8 {width: 66.66%;}
+.intro-col-9 {width: 75%;}
+.intro-col-10 {width: 83.33%;}
+.intro-col-11 {width: 91.66%;}
+.intro-col-12 {width: 100%;}
+
+  
+[class*="intro-col-"] {
+  float:left;
+}
+
+#intro-row{
+  display:flex;
+  align-items:center;
+  float:left;
+}
+
+.intro-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  
+  
+  
+
+#view-all {
+  background-color:#0066CC;
+  border-color:transparent;
+  width:120px;
+  border-radius:15px;
+}
+#view-all:hover {
+  background-color:#00478F;
+}
+.vertical-center {
+  margin: 0;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+.intro-num {
+  position: relative;
+  transform: translate(0%,-20%);
+  z-index:1;
+}
+.trillium {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index:-999;
+}
+
+#mobile-intro-num{
+  display:none;
+}
+
+@media screen and (max-width: 600px) {
+  #mobile-intro-num {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width:100%;
+    margin-top:20px;
+  }
+  #desktop-intro-num {
+    display:none;
+  }
+  .intro-col-9{
+    width:100%;
+    padding:10px;
+  }
+  #intro {
+    align-items:center;
+    text-align:center;
+  }
+}
+
+  
+</style>
+
+
+
+
