@@ -60,24 +60,42 @@
   display: block;
 }
 
-@media screen and (max-width: 600px) {
-  #site-logo-icorridor {
-    visibility: hidden;
-    clear: both;
-    display: none;
+@media screen and (max-width: 1200px) {
+  .header-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
+  
   #site-logo-mto {
     visibility: hidden;
     clear: both;
     display: none;
   }
-  #site-logo-agol {
-    visibility: hidden;
-    clear: both;
-    display: none;
-  }
   .header-link {
-  margin-left: 15px;
-  font-size:80%;
+  margin-left:7px;
+  font-size:70%;
 }
+}
+
+@media screen and (min-width:576px) and (max-width: 1200px) {
+
+  #site-logo-icorridor {
+    position: static;
+    transform: translate(0%,-20%);
+  }
+  .site-logo-icorridor {
+    max-height:30px;
+    min-height:15px;
+  }
+
+}
+
+@media screen and (max-width: 575px) {
+
+  #site-logo-icorridor {
+    display:none;
+  }
+
 }
