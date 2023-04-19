@@ -4,18 +4,14 @@
     <div class="featured-title">
       <h1><b>Apps&nbsp;&amp; Maps</b></h1>
     </div>
-  
     <!--Box containing Dropdown Menu-->
-    <div class="dropdown-container">
+    <div id="desktop-body-dropdown" class="dropdown-container">
       <!--Clicking Area for Dropdown Menu-->
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><b>
         </b><div class="dropdown-click">
-          
           <span class="dropdown-text">Recently Added <span class="caret"></span></span> 
-           
         </div>
       </a>
-      
       <ul id="dropdown-select" class="dropdown-menu">
         <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation#featured-container">Road Transportation</a></li>
         <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">Alternative Transportation</a></li>
@@ -25,21 +21,55 @@
         <li class="divider" role="separator"></li>
         <p class="featured-container"><b>MTO Internal</b></p>
         <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> Transportation Forecasting</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> ChargeON</a></li>
         <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> Internal Applications</a></li>
       </ul>
-      
     </div>
-    
-    
-    
     <div>
       <h1><b> </b></h1>
     </div>
-    
   </div>
+  
+  <div id="mobile-body-dropdown">
+  <div class="dropdown-container">
+      <!--Clicking Area for Dropdown Menu-->
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><b>
+        </b><div class="dropdown-click">
+          <span class="dropdown-text">Recently Added <span class="caret"></span></span> 
+        </div>
+      </a>
+      <ul id="dropdown-select" class="dropdown-menu">
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation#featured-container">Road Transportation</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">Alternative Transportation</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">System Performance</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">Demographics &amp; Landuse</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation">External Applications</a></li>
+        <li class="divider" role="separator"></li>
+        <p class="featured-container"><b>MTO Internal</b></p>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> Transportation Forecasting</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> ChargeON</a></li>
+        <li><a href="https://icorridor-mto-on-ca.hub.arcgis.com/pages/road-transportation"><img class="text-icon" src="https://github.com/mto-safo/safo-icorridorpublic/blob/main/img/MTO_icon.png?raw=true"> Internal Applications</a></li>
+      </ul>
+  </div>
+</div>
+  
 </div>
 
 <style>
+.body-col-1 {width: 8.33%;}
+.body-col-2 {width: 16.66%;}
+.body-col-3 {width: 25%;}
+.body-col-4 {width: 33.33%;}
+.body-col-5 {width: 41.66%;}
+.body-col-6 {width: 50%;}
+.body-col-7 {width: 58.33%;}
+.body-col-8 {width: 66.66%;}
+.body-col-9 {width: 75%;}
+.body-col-10 {width: 83.33%;}
+.body-col-11 {width: 91.66%;}
+.body-col-12 {width: 100%;}
+
+
   #bootstrap-overrides .caret {
     font-size:40px;
   }
@@ -67,7 +97,7 @@
     box-shadow: -10px -10px 15px rgba(240,240,240,5),10px 10px 15px rgba(190,190,190,5);
   }
   .dropdown-text {
-    font-size:200%;
+    font-size:150%;
     vertical-align:middle;
   }
   .text-icon {
@@ -90,4 +120,41 @@
       opacity: 1;
     }
   }
+  
+  
+  #mobile-body-dropdown {
+    display:none
+  }
+  @media screen and (max-width: 1199px) {
+    .featured-container{
+      position: relative;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .featured-title {
+    position: relative;
+    display:flex;
+    left:none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+    #mobile-body-dropdown {
+      display:flex;
+      width:100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #desktop-body-dropdown {
+      display:none;
+    }
+    .dropdown-container {
+      width:80%;
+      padding-top:20px;
+    }
+}
+  
 </style>
