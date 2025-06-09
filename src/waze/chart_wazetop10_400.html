@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top 10 Congested 400-series Highway Corridors Ranked by Congestion Score</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 10px; }
+        #chartContainer400 { width: 100%; height: 500px; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h2>Top 10 Congested 400-series Highway Corridors Ranked by Congestion Score</h2>
+    <div id="chartContainer400">
+        <canvas id="myBarChart400"></canvas>
+    </div>
+
+    <script>
+        // Define the URL and query for the 400-series chart
+        const serviceUrl400 = "https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/congestion_score_city_street_archived_view/FeatureServer/0/query";
+        
+        const queryParams400 = new URLSearchParams({
+            where: "Street_City LIKE 'Hwy 4%'",
+            outFields: "Street_City,Congestion_Score",
+            orderByFields: "Congestion_Score DESC",
+            resultRecordCount: 10,
+            f: "json" // Request format is JSON
+        });
+
+        // Fetch the data from the ArcGIS service
+        fetch(`${serviceUrl400}?${queryParams400}`)
+            .then(response => response.json())
+            .then(data => {
+                // Check if any features were returned
+                if (!data.features || data.features.length === 0) {
+                    document.getElementById('chartContainer400').innerHTML = "<h2>No 400-series highway data found for the selected criteria.</h2>";
+                    return;
+                }
+
+                // Process the data for the chart
+                const labels400 = data.features.map(feature => feature.attributes.Street_City);
+                const scores400 = data.features.map(feature => feature.attributes.Congestion_Score);
+
+                // Create the chart using Chart.js
+                const ctx400 = document.getElementById('myBarChart400').getContext('2d');
+                new Chart(ctx400, {
+                    type: 'bar',
+                    data: {
+                        labels: labels400,
+                        datasets: [{
+                            label: 'Congestion Score',
+                            data: scores400,
+                            backgroundColor: '#007bff', // A blue color for this chart
+                            borderColor: '#0056b3',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y', // This makes the bar chart horizontal!
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false // Hide the legend for a cleaner look
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Congestion Score'
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching or creating 400-series chart:", error);
+                // Display an error message in the iframe if something goes wrong
+                document.getElementById('chartContainer400').innerHTML = "<h2>Could not load chart data.</h2>";
+            });
+    </script>
+
+</body>
+</html>
