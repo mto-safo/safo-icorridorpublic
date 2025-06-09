@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Congestion Score Chart</title>
+    <style>
+        /* Basic styling to make it look clean */
+        body { font-family: sans-serif; margin: 0; padding: 10px; }
+        #chartContainer { width: 100%; height: 500px; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div id="chartContainer">
+        <canvas id="myBarChart"></canvas>
+    </div>
+
+    <script>
+        // Define the URL and query for your public feature service
+        const serviceUrl = "https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/congestion_score_city_street_archived_view/FeatureServer/0/query";
+        
+        const queryParams = new URLSearchParams({
+            where: "City <> ' ' AND City NOT IN ('Mono', 'TOWNSHIP OF The Archipelago','North Kawartha') AND Street_City NOT LIKE 'Hwy 50' AND Street_City NOT LIKE 'Hwy 7%'",
+            outFields: "Street_City,Congestion_Score",
+            orderByFields: "Congestion_Score DESC",
+            resultRecordCount: 10,
+            f: "json" // Request format is JSON
+        });
+
+        // Fetch the data from the ArcGIS service
+        fetch(`${serviceUrl}?${queryParams}`)
+            .then(response => response.json())
+            .then(data => {
+                // Process the data for the chart
+                const labels = data.features.map(feature => feature.attributes.Street_City);
+                const scores = data.features.map(feature => feature.attributes.Congestion_Score);
+
+                // Create the chart using Chart.js
+                const ctx = document.getElementById('myBarChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar', // Use 'bar' for horizontal; Chart.js v3+ uses indexAxis
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Congestion Score',
+                            data: scores,
+                            backgroundColor: '#e40109', // Your red color
+                            borderColor: '#c30007',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y', // This makes the bar chart horizontal!
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false // Hide the legend for a cleaner look
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Congestion Score'
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching or creating chart:", error);
+                // Display an error message in the iframe if something goes wrong
+                document.getElementById('chartContainer').innerHTML = "<h2>Could not load chart data.</h2>";
+            });
+    </script>
+
+</body>
+</html>
