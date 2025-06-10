@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Congested Highway Corridors Rank</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 10px; }
+        #chartContainerNew { width: 100%; height: 500px; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h2>Congested Highway Corridors Rank</h2>
+    <div id="chartContainerNew">
+        <canvas id="myBarChartNew"></canvas>
+    </div>
+
+    <script>
+        const serviceUrl = "https://services.arcgis.com/6iGx1Dq91oKtcE7x/arcgis/rest/services/Congestion_score_street_city_statistics_view/FeatureServer/0/query";
+        
+        const queryParams = new URLSearchParams({
+            where: "City <> ' ' AND City NOT IN ('Mono', 'TOWNSHIP OF The Archipelago','North Kawartha') AND Street <> 'Hwy 50' AND Street NOT LIKE 'Hwy 7%'",
+            outFields: "City_Street,Congestion_Score", 
+            orderByFields: "Congestion_Score DESC",
+            resultRecordCount: 10,
+            f: "json"
+        });
+
+        fetch(`${serviceUrl}?${queryParams}`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.features || data.features.length === 0) {
+                    document.getElementById('chartContainerNew').innerHTML = "<h2>No data found for the selected criteria.</h2>";
+                    return;
+                }
+
+                const labels = data.features.map(feature => feature.attributes.City_Street);
+                const scores = data.features.map(feature => feature.attributes.Congestion_Score);
+
+                const ctx = document.getElementById('myBarChartNew').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Congestion Score',
+                            data: scores,
+                            backgroundColor: '#e40109',
+                            borderColor: '#c30007',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Congestion Score'
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching or creating chart:", error);
+                document.getElementById('chartContainerNew').innerHTML = "<h2>Could not load chart data.</h2>";
+            });
+    </script>
+
+</body>
+</html>
